@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import BarcodeScannerComponent from "react-webcam-barcode-scanner";
 import { Backdrop, createStyles, Fade, Grid, makeStyles, Modal, Theme, Typography } from '@material-ui/core'
@@ -10,17 +10,6 @@ function App() {
   const [openModal, setOpenModal] = React.useState(false);
 
   console.log('Scanned key: ', key)
-
-  useEffect(() => {
-    const timeId = setTimeout(() => {
-      // After 3 seconds set the show value to false
-      setOpenModal(false)
-    }, 3000)
-
-    return () => {
-      clearTimeout(timeId)
-    }
-  }, [key]);
 
   const styles = makeStyles((theme: Theme) =>
     createStyles({
@@ -51,8 +40,8 @@ function App() {
 
   const handleScan = (err?: any, result?: any) => {
     if (result) {
-      // setTimeout(async () => (setOpenModal(true)), 1000)
-      setKey(result.toString())
+      setOpenModal(true)
+      setTimeout(async () => (setKey(result.toString())), 1000)
     }
   }
 
@@ -94,7 +83,6 @@ function App() {
         {(key === 'Normal') && (<Normal />)}
         {(key === 'Spanish') && (<Spanish />)}
       </Grid>
-
     </Grid>
   );
 }
