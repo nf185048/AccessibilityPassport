@@ -1,5 +1,8 @@
 .App {
   padding: 3em;
+  background-color: whitesmoke;
+  display: flex;
+  height: 100vh;
 }
 
 .App-logo {

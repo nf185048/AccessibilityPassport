@@ -1,0 +1,52 @@
+/* MODAL ANIMATION */
+.modal-animation {
+  background-color: #5565FD;
+  color: #ffffff;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+}
+.modal-text {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 16pt;
+}
+.modal-spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-top: 1em;
+}
+.modal-spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: modal-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.modal-spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.modal-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.modal-spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes modal-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
