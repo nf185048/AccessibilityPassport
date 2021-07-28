@@ -46,7 +46,7 @@ function App() {
   }
 
   return (
-    <Grid container justify='center' className="App" >
+    <Grid container justify='center' alignItems='center' className="App" >
 
       <Modal
         open={openModal}
@@ -75,7 +75,7 @@ function App() {
         </Grid>
       </Grid>
 
-      <Grid item xs={8}>
+      <Grid item xs={8} style={{ border: '1px solid rgba(60, 60, 67, 0.13)', borderRadius: '4px' }}>
         {(key !== 'HighContrast' && key !== 'LargeText' && key !== 'LTHC' && key !== 'Normal' && key !== 'Spanish') && (<Welcome />)}
         {(key === 'HighContrast') && (<HighContrast />)}
         {(key === 'LargeText') && (<LargeText />)}
