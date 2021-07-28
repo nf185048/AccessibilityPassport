@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import BarcodeScannerComponent from "react-webcam-barcode-scanner";
-import { Sample } from './pages'
+import { Grid } from '@material-ui/core'
 
 function App() {
   const [key, setKey] = useState('Not Found');
-  console.log('key from front end', key)
+
   return (
     <div className="App">
       <BarcodeScannerComponent
@@ -15,7 +15,26 @@ function App() {
           if (result) setKey(result.toString())
         }}
       />
-      <Sample key={key} />
+
+      <Grid>
+        {(key === 'Default') && (
+          <>
+
+          </>
+        )}
+
+        {(key === 'LargeText') && (
+          <>
+
+          </>
+        )}
+
+        {(key === 'HighContrast') && (
+          <>
+
+          </>
+        )}
+      </Grid>
 
     </div>
   );
